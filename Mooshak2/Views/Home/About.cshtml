@@ -1,7 +1,31 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "C++ Compile test page";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm())
+        {
+            //Dabs sagði að herna gæti verið textarea þar sem notandinn gæti 
+            //sent inn kóðan sem hann ætlar að senda inn
+            <input type="Submit" class="btn btn-primary" value="Compile Test Code" />
+        }
+
+        @if (ViewBag.Output != null)
+        {
+            <ul>
+                @foreach (var line in ViewBag.Output)
+                {
+                    <li>@line</li>
+                }
+            </ul>
+        }
+    </div>
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+
+
+
